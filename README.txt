@@ -14,3 +14,5 @@ Getting Started
 
 - $VENV/bin/pserve production.ini   For production stages
 
+- pip install -e ".[testing]" installs packages for Unit Testing
+

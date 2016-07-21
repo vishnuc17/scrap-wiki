@@ -9,6 +9,5 @@ def main(global_config, **settings):
     config.add_static_view('static', 'static', cache_max_age=3600)
     config.add_route('index', '/')
     config.add_route('content', '/content/')
-    config.add_route('download', '/download/')
     config.scan('.views')
     return config.make_wsgi_app()

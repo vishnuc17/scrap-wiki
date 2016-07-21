@@ -1,0 +1,37 @@
+<html>
+<head>
+<style type="text/css">
+	.error
+	{
+		color: red;
+	}
+	#submit{
+		    margin-left: 77px;
+    		margin-top: 20px;
+	}
+</style>
+</head>
+<body>
+<h2>Welcome-Scrap Content Table from Wikipedia</h2>
+<form action="/content/" method="post" id="scrap">
+<label>Enter Url Here* :<input type='text' name='url' max_length='100'></label><br>
+<input type=submit name="submit" value="Submit" id="submit"><br>
+</form>
+</body>
+</html>
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
+<script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.min.js"></script>
+<script>
+// just for the demos, avoids form submit
+
+$( "#scrap" ).validate({
+  rules: {
+    url: {
+      required: true,
+      url: true
+    }
+  }
+});
+</script>

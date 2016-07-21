@@ -1,0 +1,30 @@
+<html>
+<head>Contents</head>
+<body>
+<h3>Wiki Page Scrapped: {% if url %}<a href="{{ url }}">{{ url }}</a>{% else %}Not Available{% endif %}</h3>
+<h2>{{ url_valid }}</h2>
+{% if data %}
+<table>
+  <tr>
+    <th>Index</th>
+    <th>Title</th> 
+    <th>Link</th>
+  </tr>
+  
+  {% for d in data %}
+  <tr>
+    <td>{{ d.index }}</td>
+    <td>{{ d.title }}</td> 
+    <td><a href={{ d.href }} target="_blank">Go to page</a></td>
+  </tr>
+  {% endfor %}
+  <input type="button" onclick="window.location.href='/'" name="reset" value="Reset Page">
+  <form action='/download/' method="post">
+  </form>
+</table>
+{% else %}
+<h2>Table Contents not availabe</h2>
+<button type="button" onclick="window.location.href='/'">Go to Home Page</button>
+{% endif %}
+</body>
+</html>
